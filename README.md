@@ -18,7 +18,7 @@ In this repository are Python programs that simulate Fluorescence Recovery After
   - The particles diffuse every timestep with the mean displacement centered at 0 microns and the standard deviation equal to sqrt(2Dt), where D is the **diffusion_constant** (typically 15 um^2/s) and t is the **time_step** (1 ms)
     - There can be a hetergenous mix of immobile, slow, and fast particles if the user wishes
     - The particles are allowed to diffuse for 5 **frame_interval**s or 150 **time_step**s
-  - The user can set when the photobleaching starts and ends. The intensity of the bleach can tweaked by modifying the **gamma** value. This influences the probability of a fluorphore photobleaching (being deleted from the array) within the **bleach_region** for every **time_step**
+  - The user can set when the photobleaching starts and ends. The intensity of the bleach can tweaked by modifying the **gamma** value. This influences the probability of a fluorphore photobleaching (being deleted from the array) within the **bleach_region** for every **time_step**. Whether half the cell is bleached or if a smaller bleach region within the cell is bleached can be specified as well.
 
 - During each **time_step**, the particles' distance from the compartment is calculated by finding the closest mid point and if the distance from the closest mid point exceeds the internal_radius, then a collision is detected
   - A collision is handled by calculating the following d′ = d − 2(n − r)(n_unit/n) such that the new position is calculated by taking the current uncorrected collision and subtracting 2 times the distance from the membrane (n-r) multiplied by the unit vector normal to the membrane at the collision point (n_unit/n).
