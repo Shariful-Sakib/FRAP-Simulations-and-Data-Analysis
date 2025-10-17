@@ -36,3 +36,4 @@ Also included in the repository is a script that uses PyImageJ for automating Ze
 
 
 Author: Shariful Sakib
+Reviewer: Cécile Fradin
