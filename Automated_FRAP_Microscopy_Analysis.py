@@ -351,8 +351,8 @@ fileCount = 0
 for folders in glob.iglob(directory, recursive= True):
     for extensions in extensionList:
         sorted_files = sorted(sorted(glob.iglob(folders + f'/**/*.{extensions}', recursive= True), key=extract_float))
-        fileCount = 98 #for skipping
-        for files in (sorted_files[fileCount:fileCount+1]):
+        #fileCount = 98 #for skipping
+        for files in (sorted_files):
             print(files)
             dataDict = defaultdict(list); #makes a dictionary for metadata values
             macro_arguments = {"directory": files, "ID": fileCount, "BLEACH_REGION_ANALYSIS": BLEACH_REGION_ANALYSIS, "PROFILE_ANALYSIS": PROFILE_ANALYSIS} #dictionary of arguments sent to ImageJ macro.
@@ -514,3 +514,4 @@ for folders in glob.iglob(directory, recursive= True):
 
 ij.dispose()
 sys.exit()
+
