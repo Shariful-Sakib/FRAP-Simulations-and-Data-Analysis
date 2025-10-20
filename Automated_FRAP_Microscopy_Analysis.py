@@ -184,7 +184,6 @@ function FRAP_DATA_EXTRACTION(directory)
 	RoiManager.rotate(parseFloat(experimentData[9]));
 	//roiManager("Deselect");
     //run("Select None");
-    waitForUser;
     
     run("Duplicate...", "duplicate");
     
@@ -514,4 +513,5 @@ for folders in glob.iglob(directory, recursive= True):
 
 ij.dispose()
 sys.exit()
+
 
