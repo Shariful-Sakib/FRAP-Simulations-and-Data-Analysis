@@ -10,9 +10,6 @@ Last revised: Oct 6 2025
 
 import imagej # remember to run the following in a command prompt before starting: conda activate pyimagej
 import sys
-# import ctypes
-# import tkinter
-# from tkinter import filedialog
 import easygui
 from collections import defaultdict
 import glob
@@ -62,15 +59,9 @@ BLEACH_REGION_ANALYSIS = True #User can toggle if they want to analyze the fluor
 PROFILE_ANALYSIS = True #User can can toggle if they want to analyze the fluorescence profile 
 matplotlib.use('Agg')  
 
-
-# option = ctypes.windll.user32.MessageBoxW(0, 'Please select the folder with the FRAP data in the next pop-up window', 'FRAP Analyzer - User Input Required', 0x01|0x40|0x00001000)
 option = easygui.ynbox(msg='Please select the folder with the FRAP data in the next pop-up window', title='FRAP Analyzer - User Input Required', choices=('Yes', 'No'), image=None, default_choice='Yes', cancel_choice='No')
 if option == False:
     sys.exit() #Stops the operation if user cancels
-    
-# tkinter.Tk().withdraw()
-# directory = str(filedialog.askdirectory()) + "/" #Sends the directory to the macro
-# tkinter.Tk().destroy()
 
 directory = easygui.diropenbox("Please select the folder containing your FRAP data", "Select FRAP Data Directory")
 
